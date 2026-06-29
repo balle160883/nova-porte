@@ -1,0 +1,89 @@
+{
+  "expo": {
+    "name": "Pro Mobile",
+    "slug": "pro-mobile",
+    "scheme": "promobile",
+    "owner": "pro-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo_v2.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/logo_v2.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.viaempresas.mobile",
+      "googleServicesFile": "./google-services.json",
+      "queries": {
+        "schemes": [
+          "waze",
+          "google.navigation"
+        ]
+      },
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_LOCATION",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permitir que Pro Mobile acceda a tu cámara para escanear códigos QR de pasajeros."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysPermission": "Permitir que Pro Mobile acceda a tu ubicación siempre para seguimiento en tiempo real.",
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ],
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsImpl": "mapbox"
+        }
+      ],
+      "expo-font",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "083ee954-80fa-4802-af06-3e5a8e8b7517"
+      }
+    }
+  }
+}

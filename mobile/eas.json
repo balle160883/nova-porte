@@ -1,0 +1,18 @@
+{
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "RNMAPBOX_MAPS_DOWNLOAD_TOKEN": "MAPBOX_SECRET_TOKEN_PLACEHOLDER",
+        "MAPBOX_DOWNLOADS_TOKEN": "MAPBOX_SECRET_TOKEN_PLACEHOLDER"
+      }
+    },
+    "production": {}
+  }
+}
