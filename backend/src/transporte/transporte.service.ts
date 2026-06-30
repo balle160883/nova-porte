@@ -48,7 +48,7 @@ export class TransporteService {
     }
     const result = await this.databaseService.query(
       'INSERT INTO "rutas" ("nombre", "origen", "destino", "paradas", "sede_id") VALUES ($1, $2, $3, $4, $5) RETURNING *',
-      [data.nombre, data.origen, data.destino, JSON.stringify(data.paradas), sede_id]
+      [data.nombre, data.origen, data.destino, JSON.stringify(data.paradas || []), sede_id]
     );
     return result.rows[0];
   }
@@ -73,7 +73,7 @@ export class TransporteService {
     }
     const result = await this.databaseService.query(
       'UPDATE "rutas" SET "nombre" = $1, "origen" = $2, "destino" = $3, "paradas" = $4, "activo" = $5, "sede_id" = COALESCE($6, "sede_id") WHERE "id" = $7 RETURNING *',
-      [data.nombre, data.origen, data.destino, JSON.stringify(data.paradas), data.activo, data.sede_id || null, id]
+      [data.nombre, data.origen, data.destino, JSON.stringify(data.paradas || []), data.activo, data.sede_id || null, id]
     );
     return result.rows[0];
   }
